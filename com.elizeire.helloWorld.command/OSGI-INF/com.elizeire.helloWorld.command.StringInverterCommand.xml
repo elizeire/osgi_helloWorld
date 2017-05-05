@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.elizeire.helloWorld.command.StringInverterCommand">
+   <property name="osgi.command.scope" type="String" value="helloWorld"/>
+   <property name="osgi.command.function" type="String" value="invert"/>
+   <service>
+      <provide interface="com.elizeire.helloWorld.command.StringInverterCommand"/>
+   </service>
+   <reference bind="bindStringInverter" cardinality="1..1" interface="com.elizeire.helloWorld.api.StringInverter" name="StringInverter" policy="static" unbind="unbindStringInverter"/>
+   <implementation class="com.elizeire.helloWorld.command.StringInverterCommand"/>
+</scr:component>
